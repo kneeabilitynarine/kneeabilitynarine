@@ -247,6 +247,13 @@ const VIDEO_TESTIMONIALS: { name: string; outcome: string; url: string }[] = [
     outcome: "Bad back pain, scoliosis, and knee pain — pain free.",
     url: "https://www.instagram.com/p/DJKFGnvveZA/",
   },
+  {
+    // Added 2026-11-07 at Narine's request, placed last. Name and outcome
+    // left blank on purpose until she sends them.
+    name: "",
+    outcome: "",
+    url: "https://www.instagram.com/reel/DS3pGxajxv0/",
+  },
 ];
 // Cycling background ramp for the video cards — her green + navy palette.
 const PROOF_CARD_THEMES = [
