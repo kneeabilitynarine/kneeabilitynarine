@@ -45,7 +45,7 @@ const ORIGIN_BODY: string[] = [
 
 const STATS: { value: string; label: string; sub: string }[] = [
   {
-    value: "75+",
+    value: "80+",
     label: "People out of pain",
     sub: "Clients rebuilt from the ground up, in person in Burbank, CA and online anywhere.",
   },
@@ -80,7 +80,7 @@ export default function About() {
     <div className="min-h-screen bg-white">
       <Seo
         title="About Narine | Knee Ability Narine"
-        description="Narine Ashnalikyan rebuilt her own body from patellar tendinitis before building Knee Ability Narine. ATG certified, Armenian speaking, Burbank, CA and online, 75+ people out of knee and back pain."
+        description="Narine Ashnalikyan rebuilt her own body from patellar tendinitis before building Knee Ability Narine. ATG certified, Armenian speaking, Burbank, CA and online, 80+ people out of knee and back pain."
         path="/about"
         image="/narine-about-photo.jpg"
         schema={graph(personSchema(), localBusinessSchema())}

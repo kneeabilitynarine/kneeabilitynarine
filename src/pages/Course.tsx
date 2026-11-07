@@ -124,7 +124,7 @@ const MEET_BODY: string[] = [
 const MEET_PHOTO = "/narine-meet-photo.jpg";
 const MEET_STATS: { Icon: typeof Award; label: string }[] = [
   { Icon: Award, label: "ATG Certified Coach" },
-  { Icon: Users, label: "75+ people out of pain" },
+  { Icon: Users, label: "80+ people out of pain" },
   { Icon: MapPin, label: "Burbank, CA & online" },
 ];
 
