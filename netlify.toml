@@ -8,3 +8,16 @@
 # Serverless functions (newsletter sign-up -> GHL)
 [functions]
   directory = "netlify/functions"
+
+# The course page has been taken down. Anyone with the old link goes to the home page.
+[[redirects]]
+  from = "/course"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/course/*"
+  to = "/"
+  status = 302
+  force = true

@@ -7,7 +7,6 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import Course from "./pages/Course";
 import { BLOG_POSTS } from "./data/blog";
 
 export const routes: RouteRecord[] = [
@@ -21,7 +20,6 @@ export const routes: RouteRecord[] = [
       { path: "services", Component: Services },
       { path: "contact", Component: Contact },
       { path: "blog", Component: Blog },
-      { path: "course", Component: Course },
       {
         path: "blog/:slug",
         Component: BlogPost,
