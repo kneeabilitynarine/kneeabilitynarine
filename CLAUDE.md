@@ -9,20 +9,46 @@ Narine is a rehab coach, not a tech person. She will describe what she wants the
 - Talk to her in plain, friendly words. No code, file names or tech words unless she asks.
 - If a request is unclear, ask one short question before you change anything.
 - When you finish, tell her in one or two sentences what you changed and what to check in the preview.
+- She may attach photos, or paste text or voice-note transcripts for you to work from.
 - If something goes wrong, explain it simply and say what you'll do to fix it.
 
 ## How every change goes live (always follow this)
 
-1. Make the change on a new branch. **Never push to `main` directly.**
-2. Run `npm run build` and make sure it finishes with no errors before you hand the change back. If it fails, fix it first.
-3. Narine clicks **Create PR**. Netlify then builds a **Deploy Preview** link on the pull request, and she checks the change there.
-4. She presses **Merge** when she's happy. The live site updates a few minutes later.
+Narine never needs to open GitHub. You do every GitHub step for her.
+
+**Netlify site name:** `kneeabilitynarine`
+**Live website address:** `https://kneeabilitynarine.com`
+
+Speed matters: she is waiting. Keep it quick.
+
+0. **Tell her right away:** "On it. I'll send you a preview link in a couple of minutes." Then work.
+1. **Make the change** on your working branch. **Never push to `main` directly.**
+2. **Only for bigger changes** (new page, new section, new blog post, moving things around, anything in code beyond words, links or images), run `npm install` (if needed) and `npm run build` and fix any errors first. For small text, link, price or photo swaps, **skip this step**: Netlify's preview build checks it.
+3. **Push the branch and open a draft pull request straight away** into `main` (`gh pr create --draft`, short plain title like "Update course price"). Don't wait for a branch preview first: the pull request is what makes Netlify build the preview.
+4. **Send her the preview link.** It is always `https://deploy-preview-<PR number>--<Netlify site name>.netlify.app`, plus the page path (for example `/about`).
+   - Wait for Netlify to finish: `gh pr checks <PR number> --watch --interval 15`. Only send the link once the Netlify deploy check has passed. If it failed, read why, fix it, push again and wait again before you tell her anything.
+   - Don't try to open the link yourself or use other tools to find it. The address above is enough.
+   Tell her which page to look at and what changed, in one or two short sentences. Then ask: **"Does it look right? Say 'put it live' when you're happy."**
+5. **Wait for her yes.** Only go on when she clearly says yes ("put it live", "yes", "looks good, publish it"). If she wants changes, push them to the same pull request, wait for the Netlify check again, then send her the same preview link again.
+6. **Put it live:** mark the pull request ready and merge it yourself (`gh pr ready <PR number>` then `gh pr merge <PR number> --squash`).
+7. **Tell her it's done:** "It's live. Your website will show the change in about a minute: <link to the page on the live website address>."
+
+If you can't merge it yourself (for example a permission error), don't ask her to fix it in GitHub. Tell her: "The change is ready but I couldn't put it live. Please send Josh this link:" and give her the pull request link.
+
+Never put anything live without her yes.
+
+**Several changes in one chat.** Narine often asks for a few changes one after another in the same chat. So:
+- **Before you start each new change**, bring your branch up to date with the live site: `git fetch origin main` then `git reset --hard origin/main` (only after the last change is live or she has dropped it; if she dropped it, close that pull request). After the reset, push with `--force` (your branch history changed). Each new change gets its own new pull request and preview number. This stops an old change being sent twice and stops you undoing anything already live.
+- If she asks for more changes **before** saying "put it live", push them to the same branch (same pull request, same preview address), wait for the Netlify check again, then send the link again. One "put it live" then publishes them all together.
+- If something already live looks different from what you expect (for example someone else changed the site), go with what's live, tell her in one plain sentence, and don't put back anything you weren't asked to.
+- You don't need to explain git, branches or workspaces to her. Just tell her what changed on her website.
 
 Change only what she asked for. Don't tidy up, rename or "improve" anything else.
 
 ## Writing rules for anything on the site
 
 - **American spelling** (color, paralyzed, skeptical). Narine asked for this.
+- **First person.** On the site, Narine speaks as "I" and "my" (About, Home, Course and anywhere else it's about her). Testimonials, image descriptions (alt text) and the SEO/schema descriptions for Google stay in third person.
 - **Her words, not yours.** Blog posts and page copy are built from her own videos, voice notes and writing. Keep as much of her wording as possible. Never invent quotes, stories, client results or facts for her. If something is missing, ask her.
 - **Her voice:** warm and conversational, like she talks to her clients. Short sentences, but not cold. Cut salesy padding, keep the human parts.
 - Speak to the reader as **"you"**.
@@ -43,7 +69,7 @@ Change only what she asked for. Don't tidy up, rename or "improve" anything else
 | Business name, phone, area, booking link | `src/lib/site.ts` |
 | SEO data (schema) | `src/lib/schema.ts` and `src/components/Seo.tsx` |
 | Images | `public/` |
-| Newsletter sign-up | `src/components/NewsletterSignup.tsx` and `netlify/functions/newsletter-signup.mts` |
+| Newsletter sign-up (to Kit) | `src/components/NewsletterSignup.tsx` |
 | Build and deploy settings | `netlify.toml` (build `npm run build`, publish `dist`) |
 
 ## Adding a blog post
@@ -72,7 +98,7 @@ Video testimonials are in the `VIDEO_TESTIMONIALS` list in `src/pages/Home.tsx`.
 ## Things to leave alone unless she asks
 
 - **`src/lib/site.ts` business details** must match her Google Business Profile and Yelp exactly. Don't change them unless she says her listing changed. Never add a street address: she doesn't publish one.
-- **The newsletter function** needs two settings in Netlify (`GHL_TOKEN` and `GHL_LOCATION_ID`). If she moves to a new email tool (for example Kit), that's a planned job: change the function to send to the new tool, and walk her through adding its key in Netlify.
+- **The newsletter sign-up box** (`src/components/NewsletterSignup.tsx`) sends sign-ups from the visitor's browser straight to her Kit form "Website sign-up" (form ID in the file). No keys or Netlify settings needed. Don't move this into a Netlify function: Kit's Cloudflare check blocks requests from servers. `netlify/functions/newsletter-signup.mts` is no longer used.
 - Don't remove or rename the SEO fields, schema or FAQ heading format.
 - Don't add tracking, pop-ups or new services without asking her.
 
