@@ -101,6 +101,110 @@ export const isListed = (p: BlogPost) => !p.unlisted;
    Sorted newest-first by `date` wherever this array is consumed. */
 export const BLOG_POSTS: BlogPost[] = [
   {
+    /* Added 2026-11-14 at Narine's request: the same text as
+       "returning-to-sports-after-injury", as a new post with a new title and
+       her coaching photo. Text is hers, unchanged. */
+    slug: "tore-your-acl-5-things-to-know-before-you-return-to-soccer",
+    topics: [
+      "ACL tear",
+      "Return to sport",
+      "Soccer injury",
+      "Re-injury prevention",
+      "Knee rehabilitation",
+    ],
+    title: "Tore Your ACL? 5 Things to Know Before You Return to Soccer",
+    date: "2026-11-14",
+    excerpt: "You tore your ACL and all you can think about is getting back on the field. Before you return to soccer, here are 5 things you need to know.",
+    image: "/blog-tore-your-acl-5-things-to-know-before-you-return-to-soccer.jpg",
+    imageAspect: "1013 / 1125",
+    thumbnail: "/blog-tore-your-acl-5-things-to-know-before-you-return-to-soccer-thumb.jpg",
+    takeaways: [
+      "Return to sport after an ACL injury when your body is ready, not when you feel ready. Returning too soon is one of the most common reasons athletes get re-injured.",
+      "Pain that hasn't gone away means your body is still healing. Playing through it can turn a manageable injury into a chronic one.",
+      "Being pain-free is the minimum standard. Before you return, you also want full range of motion, strength within 90% of your uninjured side, and sport-specific movement without compensation or discomfort.",
+      "Ease back in with shorter sessions, lower intensity and modified participation before full practices and games.",
+      "If pain comes back when you return, stop and go back to strengthening the injured area and the muscles that support it.",
+    ],
+    body: `You've been playing soccer your whole life. You can't imagine your life without it. And then you tore your ACL — and suddenly everything changed.
+
+Walking your dog is a challenge. Running is off the table. The sport you've built your life around is completely out of reach. And all you can think about is getting back.
+
+That urgency is completely understandable. But returning too soon is one of the most common — and costly — mistakes athletes make after a serious injury. Before you lace up and get back on the field, here are 5 things you need to know.
+
+### 1. Returning Too Soon Is How Athletes Get Re-Injured
+
+"When can I return to sport after an ACL injury?" It's the first question most athletes ask — and the honest answer is: when your body is ready, not when you feel ready.
+
+There's a well-documented phenomenon in ACL recovery called re-injury risk. Athletes who return to sport before fully rehabilitating their injury have a significantly higher rate of re-tearing the same ligament or injuring the other knee. In young athletes especially, about 23% run the risk of a second ACL tear within two years of returning.
+
+Returning to sport isn't a finish line — it's a milestone in a longer process. The athletes who come back strongest are the ones who respected the process and didn't try to rush it. Fast is slow and slow is fast. The only way to your destination is through the process, not around it.
+
+### 2. Persistent Pain Means Your Body Is Still Healing
+
+Pain is your body's signal that something isn't resolved. Playing through it — especially after a significant injury like an ACL or meniscus tear — doesn't speed up recovery. It puts already-vulnerable tissue under stress it isn't ready to handle.
+
+This is how a manageable injury becomes a chronic one. Or how a primary injury creates a secondary one that's worse than the first.
+
+If you're still experiencing pain, that's information — not an obstacle to push past. It means your body needs more time, more targeted rehab, or both. Resting alone won't fix it either. Motion is lotion. The goal is smart, progressive movement that gives your body what it needs to actually heal — not rest, not pushing through pain, but the right work at the right level.
+
+### 3. Being Pain-Free Is the Minimum Standard — Not the Only One
+
+A lot of athletes assume that once the pain is gone, they're cleared to go back. Pain-free is the starting point, not the finish line.
+
+Before returning to sport, you want to be able to demonstrate:
+
+- Full range of motion in the injured joint
+- Strength that's within 90% of your uninjured side
+- The ability to perform sport-specific movements — cutting, jumping, landing, changing direction — without compensation or discomfort
+- Confidence in the injured area under load
+
+Pain going away is a good sign. But it doesn't mean the tissue is fully healed or that the surrounding muscles have been rebuilt to the level your sport demands. Returning before those boxes are checked is where re-injury happens.
+
+### 4. Easing Back Into Your Sport Is Non-Negotiable
+
+Even when you've done the work and you're ready to return, the first step back isn't full practice at full intensity. Your body needs time to adapt to the specific demands of your sport after a period of rehabilitation.
+
+A smart return to sport looks like:
+
+- **Shorter sessions first.** Half a practice before a full one. A scrimmage before a full game.
+- **Lower intensity.** Let your body get used to the movements before you push the pace.
+- **Modified participation.** Drills and controlled situations before live game scenarios with unpredictable movement demands.
+- **Honest self-assessment.** Pay attention to how your body responds after each session, not just during it. Soreness the next day, swelling, or stiffness that wasn't there before are all signals worth noting.
+
+This is about being smart. A gradual return that goes well is always better than an aggressive return that sets you back.
+
+### 5. If Pain Returns When You Go Back, Stop and Strengthen
+
+You followed the process. You felt ready. You went back — and the pain came back with you. This happens, and it's not a failure. It's feedback.
+
+It means there's still work to do before your body is ready for the full demands of your sport. Go back to strengthening the injured area and the muscles that support it. Your quads, hamstrings, glutes, calves, and tibialis all play a role in protecting your knee — and if any of them are still lagging, your joint will feel it under sport-specific stress.
+
+One of my clients returned to soccer too soon after a knee injury and ended up sidelined for twice as long as he would have been if he'd waited. When he came to me, we rebuilt his foundation from the ground up — and he came back stronger than he was before the injury. The extra time he took in rehab paid off in a way that rushing never could have.
+
+Return when you're consistently pain-free and strong — not just one good day. One good training session is not a green light.
+
+### Frequently Asked Questions
+
+**What happens if I return to sport too soon after an ACL injury?** Returning too soon significantly increases your risk of re-injury. Studies show that athletes who return before meeting strength and movement benchmarks have up to a 15 times higher risk of re-tearing their ACL compared to those who complete full rehabilitation.
+
+**Do I need a trainer or rehab coach to return to sport safely?** Working with someone who specializes in injury rehab and return to sport makes a meaningful difference. A rehab coach can assess where you are in your recovery, identify gaps in strength or movement quality, and build a progressive program that gets you back to your sport safely — without guessing.
+
+**Can I return to sport if I still have some pain?** No. Pain is a signal that healing is incomplete. Returning to sport with unresolved pain significantly increases your risk of re-injury and can turn an acute injury into a chronic one. The goal is to be fully pain-free and to meet strength and movement benchmarks before returning.
+
+**What exercises help with return to sport after knee injury?** Progressive strengthening of the quads, hamstrings, glutes, tibialis, and calves — combined with sport-specific movement training — forms the foundation of a solid return to sport program. The specific exercises depend on where you are in your recovery and what your sport demands.
+
+### The Only Way Back Is Through the Process
+
+There are no shortcuts in injury recovery. The athletes who try to skip steps end up taking longer — and sometimes doing more damage than the original injury caused.
+
+The athletes who come back strongest are the ones who did the work, respected the timeline, and returned when their body was actually ready.
+
+If you're recovering from an injury and want to make sure you're doing it right, schedule a complimentary consult and let's map out your return to sport together.
+
+*Motion is lotion. Let's get you moving.*`,
+  },
+
+  {
     /* Built 2026-10-21 from Narine's voice note to Joshua (20 Oct), in her
        words. She reviewed it in Google Docs, made small edits and added the
        hip and groin FAQ; repetition trimmed after her review. No exercises,
